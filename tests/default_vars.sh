@@ -494,11 +494,6 @@ export SHOUR='00'
 export CDATE=${SYEAR}${SMONTH}${SDAY}${SHOUR}
 
 export NFHOUT=6
-export DAYS=0.041666666
-export FHMAX=1
-export FHMAX=${FHMAX:-`expr $DAYS \* 24`}
-export DT_ATMOS=900
-export ATMRES='C96'
 
 export DAYS="1"
 export FHMAX="24"
@@ -587,6 +582,5 @@ export RT20D=''
 export_20d_run ()
 {
 export CNTRL_DIR=''
-export CNTLMED_DIR=''
 export LIST_FILES=''
 }
