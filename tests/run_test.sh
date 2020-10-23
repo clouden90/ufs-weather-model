@@ -113,6 +113,20 @@ if [[ $S2S = 'true' ]]; then
   cp ${PATHRT}/parm/med_modelio.nml med_modelio.nml
 fi
 
+if [[ $DATM = 'true' ]]; then
+
+  atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure_datm.IN} > model_configure
+
+  edit_ice_in     < ${PATHRT}/parm/ice_in_template > ice_in
+  edit_mom_input  < ${PATHRT}/parm/${MOM_INPUT:-MOM_input_template_$OCNRES} > INPUT/MOM_input
+  edit_diag_table < ${PATHRT}/parm/diag_table_datm_template > diag_table
+  edit_data_table < ${PATHRT}/parm/datm_table_template > data_table
+  # CMEPS
+  cp ${PATHRT}/parm/fd_nems.yaml fd_nems.yaml
+  cp ${PATHRT}/parm/pio_in pio_in
+  cp ${PATHRT}/parm/med_modelio.nml med_modelio.nml
+fi
+
 if [[ $SCHEDULER = 'pbs' ]]; then
   NODES=$(( TASKS / TPN ))
   if (( NODES * TPN < TASKS )); then

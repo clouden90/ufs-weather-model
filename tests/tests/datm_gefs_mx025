@@ -1,0 +1,64 @@
+#
+# DATM GEFS control mx025
+#
+
+export TEST_DESCR="DATM-MOM6-CICE6-CMEPS - GEFSmx025"
+
+export CNTL_DIR="datm_gefs_control_mx025"
+
+export LIST_FILES="RESTART/MOM.res.nc \
+                   RESTART/MOM.res_1.nc \
+                   RESTART/MOM.res_2.nc \
+                   RESTART/MOM.res_3.nc \
+                   RESTART/iced.2011-10-02-00000.nc \
+                   RESTART/gefs.datm.cpl.r.2011-10-02-00000.nc"
+
+export_datm
+
+export FILENAME_BASE='gefs.'
+export DATM_SRC='GEFS'
+export IATM=1536
+export JATM=768
+
+export TASKS=$TASKS_datm_mx025
+export TPN=$TPN_datm_mx025
+
+export med_petlist_bounds=$MPB_datm_mx025
+export atm_petlist_bounds=$APB_datm_mx025
+export ocn_petlist_bounds=$OPB_datm_mx025
+export ice_petlist_bounds=$IPB_datm_mx025
+
+# atm/ocn/ice resolution
+export OCNRES='025'
+export ICERES='0.25'
+export NX_GLB=1440
+export NY_GLB=1080
+export NPROC_ICE='48'
+
+# set component and coupling timesteps
+export DT_ATMOS='450'
+export DT_CICE=${DT_ATMOS}
+export DT_DYNAM_MOM6='900'
+export DT_THERM_MOM6='1800'
+export CPL_SLOW=${DT_THERM_MOM6}
+export CPL_FAST=${DT_ATMOS}
+
+# nems.configure
+export coupling_interval_slow_sec=${CPL_SLOW}
+export coupling_interval_fast_sec=${CPL_FAST}
+
+# resolution dependent files
+export MOM_INPUT="MOM_input_template_${OCNRES}"
+export MESHICE="mesh.mx${OCNRES}.nc"
+export CICEGRID="grid_cice_NEMS_mx${OCNRES}.nc"
+export CICEMASK="kmtu_cice_NEMS_mx${OCNRES}.nc"
+export CHLCLIM="seawifs-clim-1997-2010.${NX_GLB}x${NY_GLB}.v20180328.nc"
+export FRUNOFF="runoff.daitren.clim.${NX_GLB}x${NY_GLB}.v20180328.nc"
+
+export MOM6_REPRO_LA='True'
+export MOM6_RIVER_RUNOFF='True'
+export MOM6_RESTART_SETTING="r"
+
+export RUNID="cpcice"
+
+export FV3_RUN=datm_control.IN

@@ -1,0 +1,15 @@
+#
+# DATM CFSR 1deg control
+#
+
+export TEST_DESCR="DATM-MOM6-CICE6-CMEPS - CFSRmx100"
+
+export CNTL_DIR="datm_cfsr_control"
+
+export LIST_FILES="RESTART/MOM.res.nc \
+                   RESTART/iced.2011-10-02-00000.nc \
+                   RESTART/cfsr.datm.cpl.r.2011-10-02-00000.nc"
+
+export_datm
+
+export FV3_RUN=datm_control.IN
