@@ -476,6 +476,10 @@ export LIST_FILES=""
 
 export_datm ()
 {
+export S2S=false
+export DATM=true
+export CPL=.F.
+
 export THRD=1
 export WLCLK=$WLCLK_dflt
 export TASKS=$TASKS_dflt

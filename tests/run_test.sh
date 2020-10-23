@@ -91,7 +91,11 @@ atparse < ${PATHRT}/fv3_conf/${FV3_RUN:-fv3_run.IN} > fv3_run
 
 atparse < ${PATHRT}/parm/${INPUT_NML:-input.nml.IN} > input.nml
 
-atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure.IN} > model_configure
+if [[ $DATM = 'true' ]]; then
+  atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure_datm.IN} > model_configure
+else
+  atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure.IN} > model_configure
+fi 
 
 atparse < ${PATHRT}/parm/${NEMS_CONFIGURE:-nems.configure} > nems.configure
 
@@ -115,12 +119,12 @@ fi
 
 if [[ $DATM = 'true' ]]; then
 
-  atparse < ${PATHRT}/parm/${MODEL_CONFIGURE:-model_configure_datm.IN} > model_configure
-
   edit_ice_in     < ${PATHRT}/parm/ice_in_template > ice_in
   edit_mom_input  < ${PATHRT}/parm/${MOM_INPUT:-MOM_input_template_$OCNRES} > INPUT/MOM_input
   edit_diag_table < ${PATHRT}/parm/diag_table_datm_template > diag_table
-  edit_data_table < ${PATHRT}/parm/datm_table_template > data_table
+  edit_data_table < ${PATHRT}/parm/data_table_template > data_table
+  # DATM
+  cp ${PATHRT}/parm/datm_data_table.IN datm_data_table
   # CMEPS
   cp ${PATHRT}/parm/fd_nems.yaml fd_nems.yaml
   cp ${PATHRT}/parm/pio_in pio_in
