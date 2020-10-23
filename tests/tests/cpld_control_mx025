@@ -53,8 +53,8 @@ export LIST_FILES="phyf024.tile1.nc \
                    RESTART/MOM.res_1.nc \
                    RESTART/MOM.res_2.nc \
                    RESTART/MOM.res_3.nc \
-                   RESTART/iced.2016-10-04-00000.nc"
-                   #RESTART/ufs.cpld.cpl.r.2016-10-04-00000.nc"
+                   RESTART/iced.2016-10-04-00000.nc \
+                   RESTART/ufs.cpld.cpl.r.2016-10-04-00000.nc"
 
 export_fv3
 export_cpl
@@ -81,8 +81,10 @@ export NY_GLB=1080
 export NPROC_ICE='48'
 
 # set component and coupling timesteps
-export DT_DYNAM_MOM6='900'
-export DT_THERM_MOM6='1800'
+#export DT_DYNAM_MOM6='900'
+#export DT_THERM_MOM6='1800'
+export DT_DYNAM_MOM6=${DT_ATMOS}
+export DT_THERM_MOM6=${DT_ATMOS}
 export CPL_SLOW=${DT_THERM_MOM6}
 export CPL_FAST=${DT_ATMOS}
 
@@ -101,4 +103,5 @@ export CHLCLIM="seawifs-clim-1997-2010.${NX_GLB}x${NY_GLB}.v20180328.nc"
 export FRUNOFF="runoff.daitren.clim.${NX_GLB}x${NY_GLB}.v20180328.nc"
 
 export MOM6_RIVER_RUNOFF='True'
+
 export FV3_RUN=cpld_control_run.IN

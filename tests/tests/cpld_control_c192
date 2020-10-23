@@ -50,8 +50,8 @@ export LIST_FILES="phyf024.tile1.nc \
                    RESTART/sfc_data.tile5.nc \
                    RESTART/sfc_data.tile6.nc \
                    RESTART/MOM.res.nc \
-                   RESTART/iced.2016-10-04-00000.nc "
-                   #RESTART/ufs.cpld.cpl.r.2016-10-04-00000.nc"
+                   RESTART/iced.2016-10-04-00000.nc \
+                   RESTART/ufs.cpld.cpl.r.2016-10-04-00000.nc"
 
 export_fv3
 export_cpl
@@ -85,8 +85,10 @@ export NPROC_ICE='24'
 # set component and coupling timesteps
 export DT_ATMOS='900'
 export DT_CICE=${DT_ATMOS}
-export DT_DYNAM_MOM6='1800'
-export DT_THERM_MOM6='3600'
+#export DT_DYNAM_MOM6='1800'
+#export DT_THERM_MOM6='3600'
+export DT_DYNAM_MOM6=${DT_ATMOS}
+export DT_THERM_MOM6=${DT_ATMOS}
 export CPL_SLOW=${DT_THERM_MOM6}
 export CPL_FAST=${DT_ATMOS}
 
