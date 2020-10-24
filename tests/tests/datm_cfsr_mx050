@@ -1,0 +1,57 @@
+#
+# DATM CFSR control mx050
+#
+
+export TEST_DESCR="DATM-MOM6-CICE6-CMEPS - CFSRmx050"
+
+export CNTL_DIR="datm_cfsr_control_mx050"
+
+export LIST_FILES="RESTART/MOM.res.nc \
+                   RESTART/MOM.res_1.nc \
+                   RESTART/MOM.res_2.nc \
+                   RESTART/MOM.res_3.nc \
+                   RESTART/iced.2011-10-02-00000.nc \
+                   RESTART/cfsr.datm.cpl.r.2011-10-02-00000.nc"
+
+export_datm
+
+export TASKS=$TASKS_datm_mx050
+export TPN=$TPN_datm_mx050
+
+export med_petlist_bounds=$MPB_datm_mx050
+export atm_petlist_bounds=$APB_datm_mx050
+export ocn_petlist_bounds=$OPB_datm_mx050
+export ice_petlist_bounds=$IPB_datm_mx050
+
+# atm/ocn/ice resolution
+export OCNRES='050'
+export ICERES='0.50'
+export NX_GLB=720
+export NY_GLB=576
+export NPROC_ICE='24'
+
+# set component and coupling timesteps
+export DT_ATMOS='900'
+export DT_CICE=${DT_ATMOS}
+export DT_DYNAM_MOM6='1800'
+export DT_THERM_MOM6='3600'
+export CPL_SLOW=${DT_THERM_MOM6}
+export CPL_FAST=${DT_ATMOS}
+
+# nems.configure
+export coupling_interval_slow_sec=${CPL_SLOW}
+export coupling_interval_fast_sec=${CPL_FAST}
+
+# resolution dependent files
+export MOM_INPUT="MOM_input_template_${OCNRES}"
+export MESHICE="mesh.mx${OCNRES}.nc"
+export CICEGRID="grid_cice_NEMS_mx${OCNRES}.nc"
+export CICEMASK="kmtu_cice_NEMS_mx${OCNRES}.nc"
+export CHLCLIM="seawifs-clim-1997-2010.${NX_GLB}x${NY_GLB}.v20180328.nc"
+export FRUNOFF="runoff.daitren.clim.${NX_GLB}x${NY_GLB}.v20180328.nc"
+
+export MOM6_RIVER_RUNOFF='True'
+
+export RUNID="cpcice"
+
+export FV3_RUN=datm_control.IN
