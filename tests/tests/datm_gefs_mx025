@@ -15,6 +15,8 @@ export LIST_FILES="RESTART/MOM.res.nc \
 
 export_datm
 
+export WLCLK=60
+
 export FILENAME_BASE='gefs.'
 export DATM_SRC='GEFS'
 export IATM=1536
