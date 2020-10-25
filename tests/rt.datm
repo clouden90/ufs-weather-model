@@ -4,3 +4,4 @@
 
 COMPILE | DATM=Y S2S=Y                                                                                          | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |
 RUN     | datm_cfsr_control                                                                                     | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |
+RUN     | datm_cfsr_mx025                                                                                       | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |

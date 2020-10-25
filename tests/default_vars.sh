@@ -479,6 +479,8 @@ export_datm ()
 export S2S=false
 export DATM=true
 export CPL=.F.
+#used for diag_template only
+export ATMRES='C96'
 
 export THRD=1
 export WLCLK=$WLCLK_dflt
