@@ -348,6 +348,7 @@ export IAU_DRYMASSFIXER=.false.
 export WRITE_RESTART_WITH_BCS=.false.
 
 export S2S=false
+export DATM=false
 export coupling_interval_fast_sec=0
 }
 
