@@ -1,5 +1,5 @@
 #
-# DATM CFSR control mx050
+# DATM CFSR 1/2deg control
 #
 
 export TEST_DESCR="DATM-MOM6-CICE6-CMEPS - CFSRmx050"

@@ -1,5 +1,5 @@
 #
-# DATM GEFS control mx050
+# DATM GEFS 1/2deg control
 #
 
 export TEST_DESCR="DATM-MOM6-CICE6-CMEPS - GEFSmx050"
