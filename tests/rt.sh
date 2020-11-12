@@ -400,7 +400,8 @@ if [[ $SINGLE_NAME != '' ]]; then
 fi
 
 if [[ $MACHINE_ID = hera.* ]] || [[ $MACHINE_ID = orion.* ]] || [[ $MACHINE_ID = cheyenne.* ]] || [[ $MACHINE_ID = jet.* ]]; then
-  RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106/${RT_COMPILER^^}}
+ # RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106/${RT_COMPILER^^}}
+ RTPWD=/work/noaa/stmp/libin/RT/NEMSfv3gfs/update-20201106/INTEL
 else
   RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106}
 fi

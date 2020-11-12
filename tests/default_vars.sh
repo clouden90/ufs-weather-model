@@ -45,6 +45,14 @@ elif [ $MACHINE_ID = wcoss_dell_p3 ]; then
   THRD_cpl_c384=1; WPG_cpl_c384=6;  MPB_cpl_c384="0 143"; APB_cpl_c384="0 149"
   OPB_cpl_c384="150 269"; IPB_cpl_c384="270 317"
 
+  TASKS_datm_025=248; TPN_datm_025=28
+  MPB_datm_025="0 79"; APB_datm_025="0 79"
+  OPB_datm_025="80 199"; IPB_datm_025="200 247"
+
+  TASKS_datm_100=256; TPN_datm_100=28
+  MPB_datm_100="16 111"; APB_datm_100="0 15"
+  OPB_datm_100="112 231"; IPB_datm_100="232 255"
+
 elif [[ $MACHINE_ID = orion.* ]]; then
 
   TASKS_dflt=150 ; TPN_dflt=40 ; INPES_dflt=3 ; JNPES_dflt=8
@@ -76,6 +84,14 @@ elif [[ $MACHINE_ID = orion.* ]]; then
   THRD_cpl_c384=1; WPG_cpl_c384=6;  MPB_cpl_c384="0 143"; APB_cpl_c384="0 149"
   OPB_cpl_c384="150 269"; IPB_cpl_c384="270 317"
 
+  TASKS_datm_025=248; TPN_datm_025=40
+  MPB_datm_025="0 79"; APB_datm_025="0 79"
+  OPB_datm_025="80 199"; IPB_datm_025="200 247"
+
+  TASKS_datm_100=256; TPN_datm_100=40
+  MPB_datm_100="16 111"; APB_datm_100="0 15"
+  OPB_datm_100="112 231"; IPB_datm_100="232 255"
+
 elif [[ $MACHINE_ID = hera.* ]]; then
 
   TASKS_dflt=150 ; TPN_dflt=40 ; INPES_dflt=3 ; JNPES_dflt=8
@@ -106,6 +122,14 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   TASKS_cpl_c384=318; TPN_cpl_c384=40; INPES_cpl_c384=3; JNPES_cpl_c384=8
   THRD_cpl_c384=1; WPG_cpl_c384=6;  MPB_cpl_c384="0 143"; APB_cpl_c384="0 149"
   OPB_cpl_c384="150 269"; IPB_cpl_c384="270 317"
+
+  TASKS_datm_025=248; TPN_datm_025=40
+  MPB_datm_025="0 79"; APB_datm_025="0 79"
+  OPB_datm_025="80 199"; IPB_datm_025="200 247"
+
+  TASKS_datm_100=256; TPN_datm_100=40
+  MPB_datm_100="16 111"; APB_datm_100="0 15"
+  OPB_datm_100="112 231"; IPB_datm_100="232 255"
 
 elif [[ $MACHINE_ID = linux.* ]]; then
 
@@ -469,9 +493,11 @@ export FHMAX=24
 export WLCLK=30
 export THRD=1
 export FHROT='0'
+export WARM_START=.F.
 
 # atm/ocn/ice resolution
 # GEFS
+export GEFS_FORCING=.T.
 export DATM_SRC="GEFS"
 export FILENAME_BASE='gefs.'
 export IATM=1536
@@ -488,12 +514,12 @@ export med_model="nems"
 export atm_model="datm"
 export ocn_model="mom6"
 export ice_model="cice6"
-export atm_petlist_bounds="0 15"
-export med_petlist_bounds="16 111"
-export ocn_petlist_bounds="112 231"
-export ice_petlist_bounds="232 255"
-export TASKS=256
-export TPN=40
+export atm_petlist_bounds=$APB_datm_100
+export med_petlist_bounds=$MPB_datm_100
+export ocn_petlist_bounds=$OPB_datm_100
+export ice_petlist_bounds=$IPB_datm_100
+export TASKS=$TASKS_datm_100
+export TPN=$TPN_datm_100
 export NPROC_ICE='24'
 
 export ENS_NUM=1
