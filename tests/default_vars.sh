@@ -546,6 +546,9 @@ export CPLMODE='nems_orig_data'
 export cap_dbug_flag="0"
 export use_coldstart=".false."
 export RUNTYPE='startup'
+export flux_convergence='0'
+export flux_iteration='2'
+export flux_scheme='0'
 
 export INPUT_NML=input.mom6.nml.IN
 export MODEL_CONFIGURE=datm_configure.IN
@@ -581,5 +584,4 @@ export FRAZIL_FWSALT='.true.'
 # default to write CICE average history files
 export CICE_HIST_AVG='.true.'
 export BL_SUFFIX=""
-export RT_SUFFIX=""
 }
