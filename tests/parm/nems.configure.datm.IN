@@ -67,6 +67,7 @@ runSeq::
      MED med_phases_aofluxes_run
      MED med_phases_prep_ocn_merge
      MED med_phases_prep_ocn_accum_fast
+     MED med_phases_history_write
    @
    OCN -> MED :remapMethod=redist
    MED med_phases_restart_write
@@ -82,8 +83,8 @@ MED_attributes::
       ATM_model = datm
       ICE_model = cice6
       OCN_model = mom
-      history_n = 0
-      history_option = nhours
+      history_n = 1
+      history_option = nsteps
       history_ymd = -999
       coupling_mode = nems_orig_data
 ::
