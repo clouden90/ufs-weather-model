@@ -400,7 +400,8 @@ if [[ $SINGLE_NAME != '' ]]; then
 fi
 
 if [[ $MACHINE_ID = hera.* ]] || [[ $MACHINE_ID = orion.* ]] || [[ $MACHINE_ID = cheyenne.* ]] || [[ $MACHINE_ID = jet.* ]]; then
-  RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106/${RT_COMPILER^^}}
+  #RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106/${RT_COMPILER^^}}
+  RTPWD=/scratch2/NCEPDEV/stmp1/Bin.Li/FV3_RT/NEMSfv3gfs/RT/update-20201106/INTEL
 else
   RTPWD=${RTPWD:-$DISKNM/NEMSfv3gfs/develop-20201106}
 fi
