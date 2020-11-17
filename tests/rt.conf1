@@ -4,5 +4,5 @@
 
 COMPILE | DATM=Y S2S=Y                                                                                                        | standard | hera.intel orion.intel               | fv3 |
 RUN     | datm_6h_cfsr                                                                                                        | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |
-#RUN     | datm_12h_cfsr                                                                                                       | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |
+RUN     | datm_12h_cfsr                                                                                                       | standard | hera.intel orion.intel wcoss_dell_p3 | fv3 |
 RUN     | datm_restart_cfsr                                                                                                   | standard | hera.intel orion.intel wcoss_dell_p3 |     | datm_6h_cfsr

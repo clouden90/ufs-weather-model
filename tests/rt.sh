@@ -208,7 +208,7 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   ECFLOW_START=/scratch2/NCEPDEV/fv3-cam/Dusan.Jovic/ecflow/bin/ecflow_start.sh
   ECF_PORT=$(( $(id -u) + 1500 ))
 
-  QUEUE=batch
+  QUEUE=debug
   COMPILE_QUEUE=batch
 
 #  ACCNR=fv3-cpu
