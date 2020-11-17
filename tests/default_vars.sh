@@ -49,9 +49,9 @@ elif [ $MACHINE_ID = wcoss_dell_p3 ]; then
   MPB_datm_025="0 79"; APB_datm_025="0 79"
   OPB_datm_025="80 199"; IPB_datm_025="200 247"
 
-  TASKS_datm_100=256; TPN_datm_100=28
+  TASKS_datm_100=154; TPN_datm_100=28
   MPB_datm_100="16 111"; APB_datm_100="0 15"
-  OPB_datm_100="112 231"; IPB_datm_100="232 255"
+  OPB_datm_100="112 141"; IPB_datm_100="142 153"
 
 elif [[ $MACHINE_ID = orion.* ]]; then
 
@@ -88,9 +88,9 @@ elif [[ $MACHINE_ID = orion.* ]]; then
   MPB_datm_025="0 79"; APB_datm_025="0 79"
   OPB_datm_025="80 199"; IPB_datm_025="200 247"
 
-  TASKS_datm_100=256; TPN_datm_100=40
+  TASKS_datm_100=154; TPN_datm_100=40
   MPB_datm_100="16 111"; APB_datm_100="0 15"
-  OPB_datm_100="112 231"; IPB_datm_100="232 255"
+  OPB_datm_100="112 141"; IPB_datm_100="142 153"
 
 elif [[ $MACHINE_ID = hera.* ]]; then
 
@@ -127,9 +127,9 @@ elif [[ $MACHINE_ID = hera.* ]]; then
   MPB_datm_025="0 79"; APB_datm_025="0 79"
   OPB_datm_025="80 199"; IPB_datm_025="200 247"
 
-  TASKS_datm_100=256; TPN_datm_100=40
+  TASKS_datm_100=154; TPN_datm_100=40
   MPB_datm_100="16 111"; APB_datm_100="0 15"
-  OPB_datm_100="112 231"; IPB_datm_100="232 255"
+  OPB_datm_100="112 141"; IPB_datm_100="142 153"
 
 elif [[ $MACHINE_ID = linux.* ]]; then
 
@@ -519,7 +519,7 @@ export ocn_petlist_bounds=$OPB_datm_100
 export ice_petlist_bounds=$IPB_datm_100
 export TASKS=$TASKS_datm_100
 export TPN=$TPN_datm_100
-export NPROC_ICE='24'
+export NPROC_ICE='12'
 
 export ENS_NUM=1
 export SYEAR='2011'
