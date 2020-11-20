@@ -52,8 +52,8 @@ export LIST_FILES=" "
 #                   RESTART/sfc_data.tile5.nc \
 #                   RESTART/sfc_data.tile6.nc \
 #                   RESTART/MOM.res.nc \
-#                   RESTART/iced.2016-10-03-43200.nc "
-#                   #RESTART/ufs.cpld.cpl.r.2016-10-03-43200.nc"
+#                   RESTART/iced.2016-10-03-43200.nc \
+#                   RESTART/ufs.cpld.cpl.r.2016-10-03-43200.nc"
 
 export_fv3
 export_cpl
