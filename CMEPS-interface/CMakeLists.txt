@@ -58,7 +58,6 @@ list(APPEND _mediator_files
   CMEPS/mediator/med_io_mod.F90
   CMEPS/mediator/med_diag_mod.F90)
 
-
 list(APPEND _mediator_defs ESMF_VERSION_MAJOR=${ESMF_VERSION_MAJOR}
                            ESMF_VERSION_MINOR=${ESMF_VERSION_MINOR}
                            INTERNAL_PIO_INIT)
